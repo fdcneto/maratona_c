@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maratona C em 24 Horas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+            color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .code-block {
+            background-color: #0c0f16;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            border: 1px solid #374151;
+            margin: 1rem 0;
+        }
+        
+        @media (min-width: 768px) {
+            .code-block {
+                font-size: 1.1rem;
+            }
+        }
+        
+        .hl-keyword { color: #f472b6; }
+        .hl-type { color: #38bdf8; }
+        .hl-string { color: #a3e635; }
+        .hl-comment { color: #6b7280; }
+        .hl-function { color: #eab308; }
+        .hl-number { color: #f0abfc; }
+        .hl-preprocessor { color: #ef4444; }
+        .hl-operator { color: #f472b6; }
+        .hl-var { color: #ffffff; }
+        
+        h1 { 
+            font-size: 2.5rem; 
+            font-weight: 900; 
+            line-height: 1.1; 
+            margin: 2rem 0 1rem 0;
+        }
+        
+        @media (min-width: 768px) {
+            h1 { font-size: 3.5rem; }
+        }
+        
+        h2 { 
+            font-size: 1.75rem; 
+            font-weight: 700; 
+            margin: 2rem 0 1rem 0;
+        }
+        
+        @media (min-width: 768px) {
+            h2 { font-size: 2.5rem; }
+        }
+        
+        h3 { 
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            margin: 1.5rem 0 0.5rem 0;
+        }
+        
+        @media (min-width: 768px) {
+            h3 { font-size: 1.75rem; }
+        }
+        
+        .section {
+            padding: 3rem 1rem;
+            border-bottom: 1px solid #374151;
+        }
+        
+        @media (min-width: 768px) {
+            .section {
+                padding: 4rem 2rem;
+            }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #06b6d4, #eab308);
+            z-index: 100;
+            transition: width 0.3s;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #06b6d4;
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 50;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+        }
+        
+        .matryoshka {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+        }
+        
+        .matryoshka > div {
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <main>
+        <!-- Seção 1: Título -->
+        <section class="section bg-gradient-to-b from-gray-900 to-gray-800">
+            <div class="container text-center">
+                <div class="text-sm md:text-lg text-cyan-400 font-bold mb-4 tracking-widest">DEV INICIANTE APRESENTA</div>
+                <h1 class="mb-4">MARATONA C</h1>
+                <h1 class="text-yellow-400">EM 24 HORAS</h1>
+                <p class="text-lg md:text-2xl text-gray-300 mt-6">Do "Hello World" aos Ponteiros: Um Guia Completo (v2).</p>
+            </div>
+        </section>
+
+        <!-- Seção 2: O Ponto de Partida -->
+        <section class="section">
+            <div class="container">
+                <h2 class="text-cyan-400">O Ponto de Partida</h2>
+                <h3 class="text-2xl md:text-3xl">Aqui está o código C da imagem.</h3>
+                <p class="text-lg md:text-xl text-gray-300 my-4">Este é o "Olá, Mundo!", a porta de entrada. Vamos dissecar linha por linha.</p>
+                
+                <ul class="list-disc list-outside text-base md:text-lg space-y-2 text-gray-400 pl-5 my-4">
+                    <li><span class="text-gray-100"><span class="hl-preprocessor">#include</span></span>: "Importa" bibliotecas (caixas de ferramentas).</li>
+                    <li><span class="text-gray-100"><span class="hl-type">int</span> <span class="hl-function">main(void)</span></span>: O "Gerente". É aqui que todo programa C começa.</li>
+                    <li><span class="text-gray-100"><span class="hl-function">printf()</span></span>: A função para "imprimir" na tela.</li>
+                    <li><span class="text-gray-100"><span class="hl-function">system("pause")</span></span>: Um truque do Windows para a tela não fechar.</li>
+                </ul>
+
+                <pre class="code-block"><code class="language-c"><span class="hl-preprocessor">#include &lt;stdio.h&gt;</span>
+<span class="hl-preprocessor">#include &lt;stdlib.h&gt;</span>
+
+<span class="hl-type">int</span> <span class="hl-function">main</span>(<span class="hl-type">void</span>)
+{
+    <span class="hl-function">printf</span>(<span class="hl-string">"Hello World!"</span>);
+
+    <span class="hl-function">system</span>(<span class="hl-string">"pause"</span>); <span class="hl-comment">//somente para Windows</span>
+    <span class="hl-keyword">return</span> <span class="hl-number">0</span>;
+}</code></pre>
+            </div>
+        </section>
+        
+        <!-- Seção 3: A Trindade Básica -->
+        <section class="section bg-gray-800">
+            <div class="container">
+                <h2 class="text-cyan-400">A Trindade Básica</h2>
+                <h3 class="text-2xl md:text-3xl">Input, Output e Retorno.</h3>
+                
+                <h3 class="text-xl md:text-2xl text-yellow-400 mt-6">1. 'return 0;'</h3>
+                <p class="text-base md:text-lg text-gray-300">É o "aviso" do seu programa (o 'main') para o Sistema Operacional. Significa: <span class="font-bold text-green-400">"Chefe, terminei e deu tudo certo!"</span>. Um 'return 1;' significaria erro.</p>
+                
+                <h3 class="text-xl md:text-2xl text-yellow-400 mt-6">2. 'scanf()'</h3>
+                <p class="text-base md:text-lg text-gray-300">O oposto do 'printf'. Se 'printf' *escreve* na tela, 'scanf' *lê* do teclado. Ele pega o que o usuário digita e guarda em uma variável.</p>
+
+                <pre class="code-block"><code class="language-c"><span class="hl-comment">// O programa agora é interativo!</span>
+<span class="hl-preprocessor">#include &lt;stdio.h&gt;</span>
+<span class="hl-preprocessor">#include &lt;stdlib.h&gt;</span>
+
+<span class="hl-type">int</span> <span class="hl-function">main</span>(<span class="hl-type">void</span>)
+{
+    <span class="hl-type">int</span> idade; <span class="hl-comment">// 1. Cria uma "caixa" (variável)</span>
+
+    <span class="hl-function">printf</span>(<span class="hl-string">"Digite sua idade: "</span>);
+    
+    <span class="hl-comment">// 2. Lê um inteiro (%d) e guarda</span>
+    <span class="hl-comment">//    no ENDEREÇO (&) de 'idade'</span>
+    <span class="hl-function">scanf</span>(<span class="hl-string">"%d"</span>, <span class="hl-operator">&</span>idade);
+    
+    <span class="hl-function">printf</span>(<span class="hl-string">"Voce tem %d anos!\n"</span>, idade);
+    
+    <span class="hl-function">system</span>(<span class="hl-string">"pause"</span>);
+    <span class="hl-keyword">return</span> <span class="hl-number">0</span>; <span class="hl-comment">// 3. "Tudo certo!"</span>
+}</code></pre>
+            </div>
+        </section>
+        
+        <!-- Seção 4: Analogia Rápida -->
+        <section class="section">
+            <div class="container">
+                <h2 class="text-cyan-400">Analogia Rápida (Múltiplas Linguagens)</h2>
+                <h3 class="text-2xl md:text-3xl">Comandos de Entrada (Ler) e Saída (Escrever).</h3>
+                <p class="text-lg md:text-xl text-gray-300 my-4">'printf' e 'scanf' são a forma "manual" de C lidar com entrada e saída. Veja como outras linguagens fazem a mesma tarefa:</p>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm md:text-lg border-collapse">
+                        <thead class="border-b-2 border-cyan-400 text-gray-100">
+                            <tr>
+                                <th class="p-2 md:p-4">Linguagem</th>
+                                <th class="p-2 md:p-4">Saída (Escrever "Olá")</th>
+                                <th class="p-2 md:p-4">Entrada (Ler 'nome')</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-gray-800 divide-y divide-gray-700">
+                            <tr class="hover:bg-gray-700">
+                                <td class="p-2 md:p-4 font-bold text-lg md:text-xl text-pink-400">C</td>
+                                <td class="p-2 md:p-4 font-mono text-xs md:text-base"><span class="hl-function">printf</span>(<span class="hl-string">"Olá"</span>);</td>
+                                <td class="p-2 md:p-4 font-mono text-xs md:text-base"><span class="hl-function">scanf</span>(<span class="hl-string">"%s"</span>, nome);</td>
+                            </tr>
+                            <tr class="hover:bg-gray-700">
+                                <td class="p-2 md:p-4 font-bold text-lg md:text-xl text-lime-400">C++</td>
+                                <td class="p-2 md:p-4 font-mono text-xs md:text-base">cout <span class="hl-operator"><<</span> <span class="hl-string">"Olá"</span>;</td>
+                                <td class="p-2 md:p-4 font-mono text-xs md:text-base">cin <span class="hl-operator">>></span> nome;</td>
+                            </tr>
+                            <tr class="hover:bg-gray-700">
+                                <td class="p-2 md:p-4 font-bold text-lg md:text-xl text-yellow-400">Java</td>
+                                <td class="p-2 md:p-4 font-mono text-xs md:text-base">System.out.println(<span class="hl-string">"Olá"</span>);</td>
+                                <td class="p-2 md:p-4 font-mono text-xs md:text-base">nome <span class="hl-operator">=</span> sc.nextLine();</td>
+                            </tr>
+                            <tr class="hover:bg-gray-700">
+                                <td class="p-2 md:p-4 font-bold text-lg md:text-xl text-sky-400">VisuAlg</td>
+                                <td class="p-2 md:p-4 font-mono text-xs md:text-base"><span class="hl-keyword">Escreva</span>(<span class="hl-string">"Olá"</span>)</td>
+                                <td class="p-2 md:p-4 font-mono text-xs md:text-base"><span class="hl-keyword">Leia</span>(nome)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção 5: Especificadores de Formato -->
+        <section class="section bg-gray-800">
+            <div class="container">
+                <h2 class="text-cyan-400">As "Etiquetas" Mágicas</h2>
+                <h3 class="text-2xl md:text-3xl">Especificadores de Formato ('%')</h3>
+                <p class="text-lg md:text-xl text-gray-300 my-4">O 'scanf' e o 'printf' não são "espertos". Você **precisa** dizer a eles que tipo de dado está lendo ou escrevendo. Essas "etiquetas" ('%') são **obrigatórias**.</p>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-base md:text-xl border-collapse">
+                        <thead class="border-b-2 border-cyan-400 text-gray-100">
+                            <tr>
+                                <th class="p-2 md:p-4">Etiqueta</th>
+                                <th class="p-2 md:p-4">Tipo de Dado</th>
+                                <th class="p-2 md:p-4">O que representa</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-gray-900 divide-y divide-gray-700">
+                            <tr class="hover:bg-gray-700">
+                                <td class="p-2 md:p-4 font-mono font-bold text-lime-400">%d (ou %i)</td>
+                                <td class="p-2 md:p-4 font-mono hl-type">int</td>
+                                <td class="p-2 md:p-4">Número **Inteiro**</td>
+                            </tr>
+                            <tr class="hover:bg-gray-700">
+                                <td class="p-2 md:p-4 font-mono font-bold text-lime-400">%f</td>
+                                <td class="p-2 md:p-4 font-mono hl-type">float</td>
+                                <td class="p-2 md:p-4">Número **Decimal** (ex: 1.75)</td>
+                            </tr>
+                            <tr class="hover:bg-gray-700">
+                                <td class="p-2 md:p-4 font-mono font-bold text-lime-400">%c</td>
+                                <td class="p-2 md:p-4 font-mono hl-type">char</td>
+                                <td class="p-2 md:p-4">Um **ÚNICO Caractere** (ex: 'A')</td>
+                            </tr>
+                            <tr class="hover:bg-gray-700">
+                                <td class="p-2 md:p-4 font-mono font-bold text-lime-400">%s</td>
+                                <td class="p-2 md:p-4 font-mono hl-type">char[]</td>
+                                <td class="p-2 md:p-4">Um **Texto (String)** (ex: "Maria")</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="bg-red-900 border border-red-500 text-white p-4 md:p-6 rounded-lg mt-6 text-base md:text-lg">
+                    <span class="font-bold text-xl md:text-2xl">⚠️ A MAIOR PEGADINHA DE C!</span><br>
+                    Para 'printf': Use <span class="font-bold text-yellow-300">%f</span> para 'float' e 'double'.<br>
+                    Para 'scanf': Use <span class="font-bold text-yellow-300">%f</span> para 'float', mas use <span class="font-bold text-yellow-300">%lf</span> (long float) para 'double'.
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção 6: Exemplo 1 - Sintaxe Básica -->
+        <section class="section">
+            <div class="container">
+                <h2 class="text-cyan-400">Exemplo Prático 1</h2>
+                <h3 class="text-2xl md:text-3xl">Juntando as Etiquetas.</h3>
+                <p class="text-lg md:text-xl text-gray-300 my-4">Este programa usa todos os 4 especificadores essenciais para criar uma "Ficha Cadastral" básica.</p>
+                
+                <ul class="list-disc list-outside text-base md:text-lg space-y-2 text-gray-400 pl-5 my-4">
+                    <li><span class="text-lime-400">%s</span> para o nome (um array 'char[]').</li>
+                    <li><span class="text-lime-400">%d</span> para a idade ('int').</li>
+                    <li><span class="text-lime-400">%f</span> para a altura ('float').</li>
+                    <li><span class="text-lime-400">%c</span> para a inicial ('char').</li>
+                    <li>Note o <span class="font-bold text-gray-100">espaço antes do '%c'</span> no 'scanf'! É um truque para ele ignorar o "Enter" da digitação anterior.</li>
+                </ul>
+
+                <pre class="code-block"><code class="language-c"><span class="hl-preprocessor">#include &lt;stdio.h&gt;</span>
+<span class="hl-preprocessor">#include &lt;stdlib.h&gt;</span>
+
+<span class="hl-type">int</span> <span class="hl-function">main</span>(<span class="hl-type">void</span>) {
+    <span class="hl-type">char</span> nome[<span class="hl-number">50</span>];
+    <span class="hl-type">int</span> idade;
+    <span class="hl-type">float</span> altura;
+    <span class="hl-type">char</span> inicial;
+
+    <span class="hl-function">printf</span>(<span class="hl-string">"Nome: "</span>);
+    <span class="hl-function">scanf</span>(<span class="hl-string">"%s"</span>, nome); <span class="hl-comment">// NÃO usa &</span>
+    
+    <span class="hl-function">printf</span>(<span class="hl-string">"Idade: "</span>);
+    <span class="hl-function">scanf</span>(<span class="hl-string">"%d"</span>, <span class="hl-operator">&</span>idade); <span class="hl-comment">// Usa &</span>
+    
+    <span class="hl-function">printf</span>(<span class="hl-string">"Altura (ex: 1.75): "</span>);
+    <span class="hl-function">scanf</span>(<span class="hl-string">"%f"</span>, <span class="hl-operator">&</span>altura); <span class="hl-comment">// Usa &</span>
+    
+    <span class="hl-function">printf</span>(<span class="hl-string">"Inicial: "</span>);
+    <span class="hl-function">scanf</span>(<span class="hl-string">" %c"</span>, <span class="hl-operator">&</span>inicial); <span class="hl-comment">// Usa & e o espaço!</span>
+
+    <span class="hl-function">printf</span>(<span class="hl-string">"\n--- Ficha ---\n"</span>);
+    <span class="hl-function">printf</span>(<span class="hl-string">"Nome: %s (%c)\n"</span>, nome, inicial);
+    <span class="hl-function">printf</span>(<span class="hl-string">"Idade: %d\n"</span>, idade);
+    <span class="hl-function">printf</span>(<span class="hl-string">"Altura: %.2f\n"</span>, altura); <span class="hl-comment">// %.2f = 2 casas</span>
+
+    <span class="hl-function">system</span>(<span class="hl-string">"pause"</span>);
+    <span class="hl-keyword">return</span> <span class="hl-number">0</span>;
+}</code></pre>
+            </div>
+        </section>
+        
+        <!-- Seção 7: if / else -->
+        <section class="section bg-gray-800">
+            <div class="container">
+                <h2 class="text-cyan-400">Controle de Fluxo</h2>
+                <h3 class="text-2xl md:text-3xl">Tomando Decisões: 'if / else'</h3>
+                <p class="text-lg md:text-xl text-gray-300 my-4">Seu programa ganha "cérebro". O 'if' é uma bifurcação na estrada: o código só entra no bloco '{...}' se a condição for <span class="text-green-400 font-bold">VERDADEIRA</span>.</p>
+                
+                <h3 class="text-xl md:text-2xl text-yellow-400 mt-6">Os Operadores</h3>
+                <div class="grid grid-cols-2 gap-2 md:gap-4 text-base md:text-xl font-mono my-4">
+                    <div><span class="text-pink-400">==</span> <span class="text-gray-300">(Igual a)</span></div>
+                    <div><span class="text-pink-400">!=</span> <span class="text-gray-300">(Diferente de)</span></div>
+                    <div><span class="text-pink-400">></span> <span class="text-gray-300">(Maior que)</span></div>
+                    <div><span class="text-pink-400"><</span> <span class="text-gray-300">(Menor que)</span></div>
+                    <div><span class="text-pink-400">>=</span> <span class="text-gray-300">(Maior ou igual a)</span></div>
+                    <div><span class="text-pink-400"><=</span> <span class="text-gray-300">(Menor ou igual a)</span></div>
+                </div>
+
+                <pre class="code-block"><code class="language-c"><span class="hl-type">int</span> nota;
+<span class="hl-function">printf</span>(<span class="hl-string">"Digite sua nota (0 a 10): "</span>);
+<span class="hl-function">scanf</span>(<span class="hl-string">"%d"</span>, <span class="hl-operator">&</span>nota);
+
+<span class="hl-keyword">if</span> (nota <span class="hl-operator">>=</span> <span class="hl-number">7</span>) {
+    <span class="hl-function">printf</span>(<span class="hl-string">"APROVADO! :D\n"</span>);
+} 
+<span class="hl-keyword">else if</span> (nota <span class="hl-operator">>=</span> <span class="hl-number">5</span>) {
+    <span class="hl-function">printf</span>(<span class="hl-string">"RECUPERACAO. :|\n"</span>);
+} 
+<span class="hl-keyword">else</span> {
+    <span class="hl-function">printf</span>(<span class="hl-string">"REPROVADO. :(\n"</span>);
+}</code></pre>
+            </div>
+        </section>
+        
+        <!-- Seção 8: Loops -->
+        <section class="section">
+            <div class="container">
+                <h2 class="text-cyan-400">Controle de Fluxo</h2>
+                <h3 class="text-2xl md:text-3xl">Repetindo Tarefas: 'while' e 'for'</h3>
+                <p class="text-lg md:text-xl text-gray-300 my-4">Loops servem para você não ter que escrever o mesmo código várias vezes.</p>
+                
+                <h3 class="text-xl md:text-2xl text-yellow-400 mt-6">1. 'while' (Enquanto)</h3>
+                <p class="text-base md:text-lg text-gray-300">O loop mais simples. "Enquanto a condição for VERDADEIRA, continue executando". Você precisa controlar o "passo" (ex: 'i++') manually.</p>
+                
+                <h3 class="text-xl md:text-2xl text-yellow-400 mt-6">2. 'for' (Para)</h3>
+                <p class="text-base md:text-lg text-gray-300">O especialista em contagem. Ele junta as 3 partes essenciais de um loop em uma só linha:</p>
+                <p class="text-sm md:text-lg font-mono text-lime-400 bg-gray-900 p-2 rounded my-2">for ( <span class="text-pink-400">1. Início</span> ; <span class="text-pink-400">2. Condição</span> ; <span class="text-pink-400">3. Passo</span> )</p>
+
+                <pre class="code-block"><code class="language-c"><span class="hl-comment">// Contando de 1 a 5 com WHILE</span>
+<span class="hl-type">int</span> i <span class="hl-operator">=</span> <span class="hl-number">1</span>; <span class="hl-comment">// 1. Início</span>
+<span class="hl-keyword">while</span> (i <span class="hl-operator"><=</span> <span class="hl-number">5</span>) { <span class="hl-comment">// 2. Condição</span>
+    <span class="hl-function">printf</span>(<span class="hl-string">"%d\n"</span>, i);
+    i<span class="hl-operator">++</span>; <span class="hl-comment">// 3. Passo (ESSENCIAL!)</span>
+}
+
+<span class="hl-comment">// Contando de 1 a 5 com FOR</span>
+<span class="hl-comment">// ( 1. Início ; 2. Condição ; 3. Passo )</span>
+<span class="hl-keyword">for</span> (<span class="hl-type">int</span> j <span class="hl-operator">=</span> <span class="hl-number">1</span>; j <span class="hl-operator"><=</span> <span class="hl-number">5</span>; j<span class="hl-operator">++</span>) {
+    <span class="hl-function">printf</span>(<span class="hl-string">"%d\n"</span>, j);
+}</code></pre>
+            </div>
+        </section>
+        
+        <!-- Seção 9: Arrays 1D -->
+        <section class="section bg-gray-800">
+            <div class="container">
+                <h2 class="text-cyan-400">Guardando Dados (1D)</h2>
+                <h3 class="text-2xl md:text-3xl">'Arrays' (Listas)</h3>
+                <p class="text-lg md:text-xl text-gray-300 my-4">E se você precisar guardar 5 notas? 'nota1', 'nota2'... é péssimo.</p>
+                <p class="text-lg md:text-xl text-gray-300">Use um <span class="text-yellow-400 font-bold">Array</span>. É uma única variável que funciona como um "gaveteiro" com vários espaços para dados do <span class="font-bold">mesmo tipo</span>.</p>
+                
+                <h3 class="text-xl md:text-2xl text-red-500 mt-6">O Conceito Base-Zero!</h3>
+                <p class="text-base md:text-lg text-gray-300">A contagem em C (e na maioria das linguagens) começa em <span class="text-2xl font-bold text-red-500">ZERO</span>.</p>
+                <p class="text-base md:text-lg text-gray-300">Um array de 5 posições 'int notas[5]' tem os índices:</p>
+                <p class="text-sm md:text-xl font-mono text-lime-400 bg-gray-900 p-3 rounded my-2">notas[0], notas[1], notas[2], notas[3], notas[4]</p>
+                <p class="text-base md:text-lg text-gray-300">Tentar acessar 'notas[5]' é um erro grave!</p>
+
+                <pre class="code-block"><code class="language-c"><span class="hl-preprocessor">#include &lt;stdio.h&gt;</span>
+<span class="hl-preprocessor">#include &lt;stdlib.h&gt;</span>
+
+<span class="hl-type">int</span> <span class="hl-function">main</span>(<span class="hl-type">void</span>) {
+    <span class="hl-comment">// Declara um "gaveteiro" para 3 notas</span>
+    <span class="hl-type">float</span> notas[<span class="hl-number">3</span>]; 
+    <span class="hl-type">float</span> soma <span class="hl-operator">=</span> <span class="hl-number">0</span>;
+
+    <span class="hl-comment">// O 'for' é perfeito para percorrer arrays!</span>
+    <span class="hl-keyword">for</span> (<span class="hl-type">int</span> i <span class="hl-operator">=</span> <span class="hl-number">0</span>; i <span class="hl-operator"><</span> <span class="hl-number">3</span>; i<span class="hl-operator">++</span>) {
+        <span class="hl-function">printf</span>(<span class="hl-string">"Digite a nota %d: "</span>, i <span class="hl-operator">+</span> <span class="hl-number">1</span>);
+        <span class="hl-comment">// Lê e guarda em notas[0], notas[1]...</span>
+        <span class="hl-function">scanf</span>(<span class="hl-string">"%f"</span>, <span class="hl-operator">&</span>notas[i]); 
+        soma <span class="hl-operator">+=</span> notas[i]; <span class="hl-comment">// soma = soma + notas[i]</span>
+    }
+    
+    <span class="hl-function">printf</span>(<span class="hl-string">"A media e: %.1f\n"</span>, soma / <span class="hl-number">3</span>);
+
+    <span class="hl-function">system</span>(<span class="hl-string">"pause"</span>);
+    <span class="hl-keyword">return</span> <span class="hl-number">0</span>;
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- Seção 10: Matrizes 2D -->
+        <section class="section">
+            <div class="container">
+                <h2 class="text-cyan-400">Guardando Dados (2D)</h2>
+                <h3 class="text-2xl md:text-3xl">'Matrizes' (Tabelas)</h3>
+                <p class="text-lg md:text-xl text-gray-300 my-4">Se um Array é um gaveteiro (1D), uma Matriz é uma <span class="text-yellow-400 font-bold">"estante de gaveteiros"</span> (2D). É um "array de arrays".</p>
+                <p class="text-lg md:text-xl text-gray-300">É perfeito para representar tabelas, planilhas ou tabuleiros. Você precisa de 2 índices: '[LINHA][COLUNA]'.</p>
+                
+                <h3 class="text-xl md:text-2xl text-yellow-400 mt-6">Loops Aninhados</h3>
+                <p class="text-base md:text-lg text-gray-300">Para percorrer uma Matriz (2D), você precisa de 2 loops (um dentro do outro):</p>
+                <ul class="list-disc list-outside text-base md:text-lg space-y-2 text-gray-400 pl-5 my-4">
+                    <li>O loop "de fora" (pai) controla as <span class="text-gray-100">Linhas</span>.</li>
+                    <li>O loop "de dentro" (filho) controla as <span class="text-gray-100">Colunas</span>.</li>
+                </ul>
+
+                <pre class="code-block"><code class="language-c"><span class="hl-comment">// Matriz para 2 alunos, 3 notas cada</span>
+<span class="hl-type">float</span> notas[<span class="hl-number">2</span>][<span class="hl-number">3</span>]; <span class="hl-comment">// [Linhas][Colunas]</span>
+
+<span class="hl-comment">// Loop "pai" para as LINHAS (alunos)</span>
+<span class="hl-keyword">for</span> (<span class="hl-type">int</span> aluno <span class="hl-operator">=</span> <span class="hl-number">0</span>; aluno <span class="hl-operator"><</span> <span class="hl-number">2</span>; aluno<span class="hl-operator">++</span>) {
+    
+    <span class="hl-function">printf</span>(<span class="hl-string">"--- Aluno %d ---\n"</span>, aluno <span class="hl-operator">+</span> <span class="hl-number">1</span>);
+    
+    <span class="hl-comment">// Loop "filho" para as COLUNAS (notas)</span>
+    <span class="hl-keyword">for</span> (<span class="hl-type">int</span> nota <span class="hl-operator">=</span> <span class="hl-number">0</span>; nota <span class="hl-operator"><</span> <span class="hl-number">3</span>; nota<span class="hl-operator">++</span>) {
+        
+        <span class="hl-function">printf</span>(<span class="hl-string">"Digite a nota %d: "</span>, nota <span class="hl-operator">+</span> <span class="hl-number">1</span>);
+        <span class="hl-function">scanf</span>(<span class="hl-string">"%f"</span>, <span class="hl-operator">&</span>notas[aluno][nota]);
+    }
+}</code></pre>
+            </div>
+        </section>
+        
+        <!-- Seção 11: Funções -->
+        <section class="section bg-gray-800">
+            <div class="container">
+                <h2 class="text-cyan-400">Organizando o Caos</h2>
+                <h3 class="text-2xl md:text-3xl">'Funções' (O "Gerente" e os "Especialistas")</h3>
+                <p class="text-lg md:text-xl text-gray-300 my-4">Sua função 'main' vai ficar gigante e confusa. Funções são "mini-programas" que você cria para organizar o código.</p>
+                <p class="text-lg md:text-xl text-gray-300">A 'main' vira o "Gerente" e as funções são os "Especialistas" que o gerente chama.</p>
+                <ul class="list-disc list-outside text-base md:text-lg space-y-2 text-gray-400 pl-5 my-4">
+                    <li><span class="text-gray-100">**Reutilização:** Escreva o código 'somar()' uma vez, use 100 vezes.</li>
+                    <li><span class="text-gray-100">**Organização:** Seu 'main' fica limpo e legível.</li>
+                </ul>
+                
+                <h3 class="text-xl md:text-2xl text-yellow-400 mt-6">Sintaxe</h3>
+                <div class="text-sm md:text-lg font-mono text-lime-400 bg-gray-900 p-3 rounded my-4">
+                    <span class="text-sky-400">tipo_de_retorno</span> <span class="text-yellow-400">nome_da_funcao</span> ( <span class="text-sky-400">tipo</span> <span class="text-white">parametro1</span>, ... ) {<br>
+                    &nbsp;&nbsp;<span class="hl-comment">// Código...</span><br>
+                    &nbsp;&nbsp;<span class="text-pink-400">return</span> valor_de_retorno;<br>
+                    }
+                </div>
+
+                <pre class="code-block"><code class="language-c"><span class="hl-preprocessor">#include &lt;stdio.h&gt;</span>
+<span class="hl-preprocessor">#include &lt;stdlib.h&gt;</span>
+
+<span class="hl-comment">// --- 1. O "Especialista" ---</span>
+<span class="hl-comment">// Retorna um 'int', recebe dois 'int'</span>
+<span class="hl-type">int</span> <span class="hl-function">somar</span>(<span class="hl-type">int</span> a, <span class="hl-type">int</span> b) {
+    <span class="hl-type">int</span> resultado <span class="hl-operator">=</span> a <span class="hl-operator">+</span> b;
+    <span class="hl-keyword">return</span> resultado; <span class="hl-comment">// Devolve a resposta</span>
+}
+
+<span class="hl-comment">// --- 2. O "Gerente" ---</span>
+<span class="hl-type">int</span> <span class="hl-function">main</span>(<span class="hl-type">void</span>) {
+    <span class="hl-type">int</span> n1 <span class="hl-operator">=</span> <span class="hl-number">10</span>;
+    <span class="hl-type">int</span> n2 <span class="hl-operator">=</span> <span class="hl-number">20</span>;
+    
+    <span class="hl-comment">// 3. O Gerente "chama" o especialista</span>
+    <span class="hl-type">int</span> resposta <span class="hl-operator">=</span> <span class="hl-function">somar</span>(n1, n2);
+    
+    <span class="hl-function">printf</span>(<span class="hl-string">"A soma e: %d\n"</span>, resposta); <span class="hl-comment">// 30</span>
+    
+    <span class="hl-function">system</span>(<span class="hl-string">"pause"</span>);
+    <span class="hl-keyword">return</span> <span class="hl-number">0</span>;
+}</code></pre>
+            </div>
+        </section>
+        
+        <!-- Seção 12: Recursividade -->
+        <section class="section">
+            <div class="container">
+                <h2 class="text-cyan-400">Conceito Avançado</h2>
+                <h3 class="text-2xl md:text-3xl">'Recursividade'</h3>
+                <p class="text-lg md:text-xl text-gray-300 my-4">É uma função que **chama a si mesma** para resolver um problema, quebrando-o em uma versão menor *exatamente do mesmo problema*.</p>
+                <p class="text-lg md:text-xl text-gray-300">Pense em <span class="text-yellow-400">Bonecas Russas (Matryoshka)</span>. Seu problema é "abrir todas as bonecas". Você abre uma, encontra uma boneca menor, e aplica a *mesma regra* ("abrir boneca") para a menor.</p>
+                
+                <h3 class="text-xl md:text-2xl text-yellow-400 mt-6">As 2 Regras de Ouro</h3>
+                <ol class="list-decimal list-outside text-base md:text-lg space-y-2 text-gray-300 pl-5 my-4">
+                    <li><span class="text-gray-100 font-bold">O Caso Base:</span> A condição de parada. A "boneca" final que não abre mais. (Ex: 'n == 1').</li>
+                    <li><span class="text-gray-100 font-bold">O Passo Recursivo:</span> A chamada para si mesma, com um problema menor. (Ex: 'n * fatorial(n-1)').</li>
+                </ol>
+                <p class="text-red-500 font-bold my-4">Se faltar o Caso Base, você cria um "loop infinito" (Stack Overflow)!</p>
+
+                <div class="matryoshka my-6">
+                    <div class="w-32 h-32 md:w-40 md:h-40 bg-red-600">
+                        <div class="w-24 h-24 md:w-32 md:h-32 bg-red-500">
+                            <div class="w-16 h-16 md:w-24 md:h-24 bg-red-400">
+                                <div class="w-8 h-8 md:w-12 md:h-12 bg-red-300"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <pre class="code-block"><code class="language-c"><span class="hl-comment">// Exemplo: Fatorial (5! = 5*4*3*2*1)</span>
+<span class="hl-type">int</span> <span class="hl-function">fatorial</span>(<span class="hl-type">int</span> n) {
+    <span class="hl-comment">// 1. O CASO BASE (A boneca final)</span>
+    <span class="hl-keyword">if</span> (n <span class="hl-operator">==</span> <span class="hl-number">1</span>) {
+        <span class="hl-keyword">return</span> <span class="hl-number">1</span>;
+    }
+    <span class="hl-comment">// 2. O PASSO RECURSIVO</span>
+    <span class="hl-keyword">else</span> {
+        <span class="hl-keyword">return</span> n <span class="hl-operator">*</span> <span class="hl-function">fatorial</span>(n <span class="hl-operator">-</span> <span class="hl-number">1</span>);
+    }
+}</code></pre>
+            </div>
+        </section>
+        
+        <!-- Seção 13: Structs -->
+        <section class="section bg-gray-800">
+            <div class="container">
+                <h2 class="text-cyan-400">Criando Seus Próprios Tipos</h2>
+                <h3 class="text-2xl md:text-3xl">'Structs' (Estruturas)</h3>
+                <p class="text-lg md:text-xl text-gray-300 my-4">E se você quiser agrupar dados de tipos **DIFERENTES**? (Ex: nome, idade e média de um aluno).</p>
+                <p class="text-lg md:text-xl text-gray-300">Um 'array' não serve (só aceita 1 tipo). A solução é uma <span class="text-yellow-400 font-bold">'struct'</span>.</p>
+                <p class="text-lg md:text-xl text-gray-300">Pense nela como uma "Ficha Cadastral" ou um "Molde". Você define o molde 'struct Aluno' uma vez, e depois pode criar quantas fichas (variáveis) quiser.</p>
+
+                <pre class="code-block"><code class="language-c"><span class="hl-preprocessor">#include &lt;stdio.h&gt;</span>
+<span class="hl-preprocessor">#include &lt;string.h&gt;</span> <span class="hl-comment">// Para strcpy</span>
+
+<span class="hl-comment">// --- 1. Definindo o "MOLDE" ---</span>
+<span class="hl-comment">// (Geralmente fora da main)</span>
+<span class="hl-keyword">struct</span> Aluno {
+    <span class="hl-type">char</span> nome[<span class="hl-number">50</span>];
+    <span class="hl-type">int</span> idade;
+    <span class="hl-type">float</span> media;
+}; <span class="hl-comment">// <-- Ponto e vírgula aqui!</span>
+
+<span class="hl-type">int</span> <span class="hl-function">main</span>(<span class="hl-type">void</span>) {
+    <span class="hl-comment">// --- 2. Criando uma "FICHA" ---</span>
+    <span class="hl-keyword">struct</span> Aluno aluno1;
+
+    <span class="hl-comment">// --- 3. Acessando os campos ---</span>
+    <span class="hl-comment">// Use o PONTO (.)</span>
+    aluno1.idade <span class="hl-operator">=</span> <span class="hl-number">20</span>;
+    aluno1.media <span class="hl-operator">=</span> <span class="hl-number">8.5</span>;
+    <span class="hl-function">strcpy</span>(aluno1.nome, <span class="hl-string">"Joao Silva"</span>);
+
+    <span class="hl-function">printf</span>(<span class="hl-string">"Nome: %s\n"</span>, aluno1.nome);
+    <span class="hl-function">printf</span>(<span class="hl-string">"Idade: %d\n"</span>, aluno1.idade);
+    
+    <span class="hl-keyword">return</span> <span class="hl-number">0</span>;
+}</code></pre>
+            </div>
+        </section>
+        
+        <!-- Seção 14: Arrays de Structs -->
+        <section class="section">
+            <div class="container">
+                <h2 class="text-cyan-400">Juntando os Conceitos</h2>
+                <h3 class="text-2xl md:text-3xl">Arrays + Structs</h3>
+                <p class="text-xl md:text-2xl text-gray-300 my-4">E se você quiser cadastrar uma **turma inteira** de 30 alunos?</p>
+                <p class="text-xl md:text-2xl text-gray-300 my-4">Você cria um <span class="text-yellow-400 font-bold">Array</span> onde cada item é uma <span class="text-lime-400 font-bold">Struct</span>.</p>
+                
+                <pre class="code-block"><code class="language-c"><span class="hl-comment">// 1. Definir o Molde</span>
+<span class="hl-keyword">struct</span> Aluno {
+    <span class="hl-type">char</span> nome[<span class="hl-number">50</span>];
+    <span class="hl-type">float</span> media;
+};
+
+<span class="hl-type">int</span> <span class="hl-function">main</span>(<span class="hl-type">void</span>) {
+    <span class="hl-comment">// 2. Criar um ARRAY de 30 Structs</span>
+    <span class="hl-keyword">struct</span> Aluno turma[<span class="hl-number">30</span>];
+    
+    <span class="hl-comment">// 3. Acessar os dados</span>
+    
+    <span class="hl-comment">// Acessa o PRIMEIRO aluno (índice 0)</span>
+    <span class="hl-function">strcpy</span>(turma[<span class="hl-number">0</span>].nome, <span class="hl-string">"Maria"</span>);
+    turma[<span class="hl-number">0</span>].media <span class="hl-operator">=</span> <span class="hl-number">9.0</span>;
+    
+    <span class="hl-comment">// Acessa o TERCEIRO aluno (índice 2)</span>
+    <span class="hl-function">strcpy</span>(turma[<span class="hl-number">2</span>].nome, <span class="hl-string">"Carlos"</span>);
+    turma[<span class="hl-number">2</span>].media <span class="hl-operator">=</span> <span class="hl-number">7.5</span>;
+    
+    <span class="hl-function">printf</span>(<span class="hl-string">"Nome do Aluno 3: %s\n"</span>, turma[<span class="hl-number">2</span>].nome);
+    
+    <span class="hl-keyword">return</span> <span class="hl-number">0</span>;
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- Seção 15: Ponteiros - Conceito -->
+        <section class="section bg-gray-800">
+            <div class="container">
+                <h2 class="text-cyan-400">O Coração do C</h2>
+                <h3 class="text-2xl md:text-3xl">'Ponteiros' (O Conceito)</h3>
+                <p class="text-lg md:text-xl text-gray-300 my-4">Este é o tópico <span class="font-bold">mais importante</span> de C. A ideia é simples:</p>
+                <p class="text-xl md:text-2xl text-lime-400 font-bold my-4">Um ponteiro é uma variável que não guarda um valor, mas sim o ENDEREÇO DE MEMÓRIA de outra variável.</p>
+                
+                <h3 class="text-xl md:text-2xl text-yellow-400 mt-6">Analogia: Casa vs. Endereço</h3>
+                <p class="text-base md:text-lg text-gray-300">Quando você cria 'int idade = 30;':</p>
+                <ul class="list-disc list-outside text-base md:text-lg space-y-2 text-gray-400 pl-5 my-4">
+                    <li>Você construiu uma <span class="text-gray-100">Casa</span> ('idade').</li>
+                    <li>O conteúdo da casa é '30'.</li>
+                    <li>A casa tem um <span class="text-gray-100">Endereço</span> (ex: 'nº 1234' da Rua Memória).</li>
+                </ul>
+                <p class="text-base md:text-lg text-gray-300">Um **Ponteiro** ('int* pIdade;') é um <span class="text-yellow-400">papel em branco</span> feito para anotar o *endereço* ('nº 1234') dessa casa.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 my-6">
+                    <div class="bg-gray-900 p-4 md:p-8 rounded-lg border border-gray-700 text-center">
+                        <svg class="w-16 h-16 md:w-24 md:h-24 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                        <div class="text-xl md:text-2xl font-bold mt-4">CASA</div>
+                        <div class="text-base md:text-lg"><span class="hl-type">int</span> idade <span class="hl-operator">=</span> <span class="hl-number">30</span>;</div>
+                        <div class="text-sm text-gray-400">Endereço: '1234'</div>
+                    </div>
+                    
+                    <div class="bg-gray-900 p-4 md:p-8 rounded-lg border border-gray-700 text-center">
+                        <svg class="w-16 h-16 md:w-24 md:h-24 text-yellow-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <div class="text-xl md:text-2xl font-bold mt-4">ENDEREÇO</div>
+                        <div class="text-base md:text-lg"><span class="hl-type">int*</span> pIdade;</div>
+                        <div class="text-sm text-gray-400">Conteúdo: '1234'</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 16: Ponteiros - Sintaxe -->
+        <section class="section">
+            <div class="container">
+                <h2 class="text-cyan-400">Os 2 Operadores de Ponteiro</h2>
+                <h3 class="text-2xl md:text-3xl mb-6">É aqui que 99% das pessoas se confundem.</h3>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
+                    <div class="bg-gray-800 p-4 md:p-8 rounded-lg border border-gray-700">
+                        <h3 class="text-4xl md:text-5xl font-mono text-pink-400 mb-4">&</h3>
+                        <h4 class="text-xl md:text-2xl font-bold mb-2">Operador "Endereço de..."</h4>
+                        <p class="text-base md:text-lg text-gray-300">É a ferramenta que **lê o endereço** de uma variável (a "casa").</p>
+                        <pre class="code-block mt-4"><code class="language-c"><span class="hl-type">int</span> idade <span class="hl-operator">=</span> <span class="hl-number">30</span>;
+<span class="hl-type">int*</span> pIdade; <span class="hl-comment">// Papel em branco</span>
+
+<span class="hl-comment">// O "papel" recebe o "ENDEREÇO DE" idade</span>
+pIdade <span class="hl-operator">=</span> <span class="hl-operator">&</span>idade; 
+
+<span class="hl-comment">// Agora pIdade vale "1234"</span>
+<span class="hl-comment">// (Você já usou isso: scanf("%d", &idade))</span></code></pre>
+                    </div>
+                    
+                    <div class="bg-gray-800 p-4 md:p-8 rounded-lg border border-gray-700">
+                        <h3 class="text-4xl md:text-5xl font-mono text-pink-400 mb-4">*</h3>
+                        <h4 class="text-xl md:text-2xl font-bold mb-2">Operador "Valor em..." (Dereferência)</h4>
+                        <p class="text-base md:text-lg text-gray-300">É a ferramenta que **"vai até o endereço"** e pega o valor que está lá.</p>
+                        <pre class="code-block mt-4"><code class="language-c"><span class="hl-comment">// pIdade tem o endereço "1234"</span>
+
+<span class="hl-comment">// Imprime o valor DO ponteiro (o endereço)</span>
+<span class="hl-function">printf</span>(<span class="hl-string">"%p"</span>, pIdade); <span class="hl-comment">// Imprime: 1234</span>
+
+<span class="hl-comment">// Imprime o VALOR NO ENDEREÇO</span>
+<span class="hl-function">printf</span>(<span class="hl-string">"%d"</span>, <span class="hl-operator">*</span>pIdade); <span class="hl-comment">// Imprime: 30</span>
+
+<span class="hl-comment">// Modifica o valor NO ENDEREÇO</span>
+<span class="hl-operator">*</span>pIdade <span class="hl-operator">=</span> <span class="hl-number">40</span>;
+<span class="hl-function">printf</span>(<span class="hl-string">"%d"</span>, idade); <span class="hl-comment">// Agora 'idade' vale 40!</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 17: Por que usar Ponteiros? -->
+        <section class="section bg-gray-800">
+            <div class="container">
+                <h2 class="text-cyan-400">Por que Usar Ponteiros?</h2>
+                <h3 class="text-2xl md:text-3xl">Para Modificar Variáveis em Funções.</h3>
+                <p class="text-lg md:text-xl text-gray-300 my-4">Por padrão, C passa variáveis para funções por <span class="font-bold text-red-500">CÓPIA</span>. A função modifica a cópia, não o original.</p>
+                <p class="text-lg md:text-xl text-gray-300">Para modificar o original, você não passa a "casa", você passa o "endereço" (o ponteiro).</p>
+                <p class="text-lg md:text-xl text-gray-300">Isso é chamado de **"Passagem por Referência"**.</p>
+
+                <pre class="code-block"><code class="language-c"><span class="hl-comment">// 1. A função NÃO funciona (passa cópia)</span>
+<span class="hl-type">void</span> <span class="hl-function">nao_muda</span>(<span class="hl-type">int</span> x) {
+    x <span class="hl-operator">=</span> <span class="hl-number">100</span>; <span class="hl-comment">// Modifica a CÓPIA</span>
+}
+
+<span class="hl-comment">// 2. A função FUNCIONA (passa endereço)</span>
+<span class="hl-comment">// Ela aceita um "papel de endereço"</span>
+<span class="hl-type">void</span> <span class="hl-function">muda_de_verdade</span>(<span class="hl-type">int*</span> pX) {
+    <span class="hl-comment">// "Vá até o endereço e guarde 100 lá"</span>
+    <span class="hl-operator">*</span>pX <span class="hl-operator">=</span> <span class="hl-number">100</span>;
+}
+
+<span class="hl-type">int</span> <span class="hl-function">main</span>(<span class="hl-type">void</span>) {
+    <span class="hl-type">int</span> valor <span class="hl-operator">=</span> <span class="hl-number">10</span>;
+    
+    <span class="hl-function">nao_muda</span>(valor);
+    <span class="hl-function">printf</span>(<span class="hl-string">"%d\n"</span>, valor); <span class="hl-comment">// Imprime 10</span>
+    
+    <span class="hl-function">muda_de_verdade</span>(<span class="hl-operator">&</span>valor); <span class="hl-comment">// Passa o ENDEREÇO</span>
+    <span class="hl-function">printf</span>(<span class="hl-string">"%d\n"</span>, valor); <span class="hl-comment">// Imprime 100</span>
+    
+    <span class="hl-keyword">return</span> <span class="hl-number">0</span>;
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- Seção 18: Por que usar Ponteiros? (Eficiência) -->
+        <section class="section">
+            <div class="container">
+                <h2 class="text-cyan-400">Por que Usar Ponteiros?</h2>
+                <h3 class="text-2xl md:text-3xl">Para Eficiência (Evitar Cópia)</h3>
+                <p class="text-xl md:text-2xl text-gray-300 my-6">Imagine que sua 'struct Aluno' tem 50 campos. Se você passar ela para uma função...</p>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 my-6">
+                    <div class="bg-red-900 p-4 md:p-8 rounded-lg border border-red-700">
+                        <h4 class="text-xl md:text-2xl font-bold mb-2">LENTO E RUIM: Passar por Cópia</h4>
+                        <p class="text-base md:text-lg text-red-100">'void func(struct Aluno aluno)'</p>
+                        <p class="text-base md:text-lg text-red-100 mt-4">O C <span class="font-bold">COPIA TODOS OS 50 CAMPOS</span>. É lento e gasta memória. A função não pode modificar o original.</p>
+                    </div>
+                    
+                    <div class="bg-green-900 p-4 md:p-8 rounded-lg border border-green-700">
+                        <h4 class="text-xl md:text-2xl font-bold mb-2">RÁPIDO E BOM: Passar por Ponteiro</h4>
+                        <p class="text-base md:text-lg text-green-100">'void func(struct Aluno* pAluno)'</p>
+                        <p class="text-base md:text-lg text-green-100 mt-4">O C <span class="font-bold">COPIA SÓ O ENDEREÇO</span> (um "papelzinho"). É super rápido. A função pode modificar o original.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção 19: Arrays são Ponteiros -->
+        <section class="section bg-gray-800">
+            <div class="container text-center">
+                <h2 class="text-cyan-400">A Grande Revelação</h2>
+                <h3 class="text-3xl md:text-5xl font-bold my-6 md:my-10">Arrays JÁ SÃO Ponteiros!</h3>
+                <p class="text-xl md:text-2xl text-gray-300 my-4">Em C, o nome de um array não é o array... é um <span class="text-yellow-400 font-bold">ponteiro constante para o primeiro elemento</span>.</p>
+                
+                <pre class="code-block text-left max-w-3xl mx-auto"><code class="language-c"><span class="hl-type">int</span> notas[<span class="hl-number">10</span>];
+
+<span class="hl-comment">// 'notas' é SÓ um ponteiro</span>
+<span class="hl-comment">// que aponta para notas[0].</span>
+
+<span class="hl-comment">// É por isso que você FAZ:</span>
+<span class="hl-function">scanf</span>(<span class="hl-string">"%d"</span>, <span class="hl-operator">&</span>notas[<span class="hl-number">0</span>]); <span class="hl-comment">// Certo</span>
+
+<span class="hl-comment">// Mas também pode fazer:</span>
+<span class="hl-function">scanf</span>(<span class="hl-string">"%d"</span>, notas); <span class="hl-comment">// Certo (notas == &notas[0])</span>
+
+<span class="hl-comment">// E é por isso que em strings:</span>
+<span class="hl-type">char</span> nome[<span class="hl-number">50</span>];
+<span class="hl-function">scanf</span>(<span class="hl-string">"%s"</span>, nome); <span class="hl-comment">// Certo!</span>
+<span class="hl-function">scanf</span>(<span class="hl-string">"%s"</span>, <span class="hl-operator">&</span>nome); <span class="hl-comment">// ERRADO! (É um & de um &)</span></code></pre>
+            </div>
+        </section>
+        
+        <!-- Seção 20: Sintaxe da Seta -> -->
+        <section class="section">
+            <div class="container">
+                <h2 class="text-cyan-400">A Ferramenta Final</h2>
+                <h3 class="text-2xl md:text-3xl mb-6">O Operador Seta '->'</h3>
+                <p class="text-xl md:text-2xl text-gray-300 my-6">Ok, temos um ponteiro para uma struct ('struct Aluno* pAluno'). Como acessamos a 'media'?</p>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 my-6">
+                    <div class="bg-gray-800 p-4 md:p-8 rounded-lg border border-gray-700">
+                        <h4 class="text-xl md:text-2xl font-bold mb-2">Com a Struct (Normal)</h4>
+                        <p class="text-base md:text-lg text-gray-300">Se você tem a "casa", use o PONTO ('.').</p>
+                        <pre class="code-block mt-4"><code class="language-c"><span class="hl-keyword">struct</span> Aluno aluno1;
+aluno1<span class="hl-operator">.</span>media <span class="hl-operator">=</span> <span class="hl-number">9.0</span>;</code></pre>
+                    </div>
+                    
+                    <div class="bg-gray-800 p-4 md:p-8 rounded-lg border border-gray-700">
+                        <h4 class="text-xl md:text-2xl font-bold mb-2">Com o Ponteiro (Novo)</h4>
+                        <p class="text-base md:text-lg text-gray-300">Se você tem o "endereço", use a SETA ('->').</p>
+                        <pre class="code-block mt-4"><code class="language-c"><span class="hl-keyword">struct</span> Aluno* pAluno <span class="hl-operator">=</span> <span class="hl-operator">&</span>aluno1;
+pAluno<span class="hl-operator">-></span>media <span class="hl-operator">=</span> <span class="hl-number">9.0</span>;</code></pre>
+                    </div>
+                </div>
+                
+                <p class="text-lg md:text-xl text-gray-400 mt-6">A '->' é um atalho que significa: "Vá até o endereço e pegue o campo da struct".<br>
+                <span class="font-mono text-lime-400">pAluno->media</span> é o mesmo que <span class="font-mono text-lime-400">(*pAluno).media</span></p>
+            </div>
+        </section>
+
+        <!-- Seção 21: Exemplo Final -->
+        <section class="section bg-gray-800">
+            <div class="container">
+                <h2 class="text-cyan-400">O Grande Final</h2>
+                <h3 class="text-2xl md:text-3xl">Juntando TUDO.</h3>
+                <p class="text-lg md:text-xl text-gray-300 my-4">Este programa prova todos os conceitos:</p>
+                <ol class="list-decimal list-outside text-base md:text-lg space-y-2 text-gray-300 pl-5 my-4">
+                    <li>Define uma <span class="text-gray-100">'struct'</span>.</li>
+                    <li>Cria uma função 'darPontoExtra' que aceita um <span class="text-gray-100">'ponteiro'</span> para essa struct (para ser eficiente e poder modificar o original).</li>
+                    <li>Usa o operador <span class="text-gray-100">Seta ('->')</span> para acessar o campo da struct original.</li>
+                    <li>Chama a função passando o <span class="text-gray-100">Endereço ('&')</span> da variável.</li>
+                </ol>
+                <p class="text-lg md:text-xl text-gray-300 my-4">O resultado é que a 'main' vê o valor alterado pela função.</p>
+
+                <pre class="code-block"><code class="language-c"><span class="hl-preprocessor">#include &lt;stdio.h&gt;</span>
+<span class="hl-preprocessor">#include &lt;stdlib.h&gt;</span>
+
+<span class="hl-comment">// 1. O Molde</span>
+<span class="hl-keyword">struct</span> Aluno {
+    <span class="hl-type">float</span> media;
+};
+
+<span class="hl-comment">// 2. A Função (aceita um endereço)</span>
+<span class="hl-type">void</span> <span class="hl-function">darPontoExtra</span>(<span class="hl-keyword">struct</span> Aluno<span class="hl-operator">*</span> pAluno) {
+    <span class="hl-function">printf</span>(<span class="hl-string">"[Funcao] Adicionando 1.0...\n"</span>);
+    
+    <span class="hl-comment">// 3. Usa a SETA (->) para modificar</span>
+    pAluno<span class="hl-operator">-></span>media <span class="hl-operator">+=</span> <span class="hl-number">1.0</span>; 
+}
+
+<span class="hl-type">int</span> <span class="hl-function">main</span>(<span class="hl-type">void</span>) {
+    <span class="hl-keyword">struct</span> Aluno aluno1;
+    aluno1.media <span class="hl-operator">=</span> <span class="hl-number">7.5</span>;
+    
+    <span class="hl-function">printf</span>(<span class="hl-string">"[Main] Media antes: %.1f\n"</span>, aluno1.media);
+    
+    <span class="hl-comment">// 4. Passa o ENDEREÇO (&)</span>
+    <span class="hl-function">darPontoExtra</span>(<span class="hl-operator">&</span>aluno1);
+    
+    <span class="hl-function">printf</span>(<span class="hl-string">"[Main] Media DEPOIS: %.1f\n"</span>, aluno1.media);
+    
+    <span class="hl-function">system</span>(<span class="hl-string">"pause"</span>);
+    <span class="hl-keyword">return</span> <span class="hl-number">0</span>;
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- Seção 22: Malloc -->
+        <section class="section">
+            <div class="container">
+                <h2 class="text-cyan-400">Tópico Avançado 1</h2>
+                <h3 class="text-2xl md:text-3xl">Alocação Dinâmica ('malloc')</h3>
+                <p class="text-lg md:text-xl text-gray-300 my-4">**O Problema:** 'int notas[10];' tem tamanho fixo. E se você não sabe o tamanho? E se o *usuário* decide que quer 50 notas?</p>
+                <p class="text-lg md:text-xl text-gray-300">**A Solução:** "Alugar" memória em tempo de execução. 'malloc' significa "Memory Allocation".</p>
+                <ul class="list-disc list-outside text-base md:text-lg space-y-2 text-gray-400 pl-5 my-4">
+                    <li><span class="text-gray-100">'malloc(bytes)'</span>: Pede ao SO um bloco de memória do tamanho em bytes.</li>
+                    <li><span class="text-gray-100">'sizeof(tipo)'</span>: Usado para calcular os bytes. (Ex: '10 * sizeof(int)').</li>
+                    <li><span class="text-gray-100">'free(ponteiro)'</span>: **OBRIGATÓRIO!** Devolve a memória alugada. Esquecer isso causa "Memory Leak" (vazamento de memória).</li>
+                </ul>
+
+                <pre class="code-block"><code class="language-c"><span class="hl-preprocessor">#include &lt;stdio.h&gt;</span>
+<span class="hl-preprocessor">#include &lt;stdlib.h&gt;</span> <span class="hl-comment">// Para malloc e free</span>
+
+<span class="hl-type">int</span> <span class="hl-function">main</span>(<span class="hl-type">void</span>) {
+    <span class="hl-type">int</span> tamanho;
+    <span class="hl-function">printf</span>(<span class="hl-string">"Quantas notas quer digitar? "</span>);
+    <span class="hl-function">scanf</span>(<span class="hl-string">"%d"</span>, <span class="hl-operator">&</span>tamanho);
+    
+    <span class="hl-comment">// 1. Alugar a memória</span>
+    <span class="hl-comment">// (int*) -> "Converte" o ponteiro genérico</span>
+    <span class="hl-type">int*</span> notas <span class="hl-operator">=</span> (<span class="hl-type">int*</span>) <span class="hl-function">malloc</span>(tamanho <span class="hl-operator">*</span> <span class="hl-keyword">sizeof</span>(<span class="hl-type">int</span>));
+    
+    <span class="hl-comment">// 2. Checar se a alocação deu certo</span>
+    <span class="hl-keyword">if</span> (notas <span class="hl-operator">==</span> NULL) {
+        <span class="hl-function">printf</span>(<span class="hl-string">"Erro! Sem memoria!\n"</span>);
+        <span class="hl-keyword">return</span> <span class="hl-number">1</span>;
+    }
+    
+    <span class="hl-comment">// 3. Usar a memória (como um array normal)</span>
+    <span class="hl-keyword">for</span>(<span class="hl-type">int</span> i <span class="hl-operator">=</span> <span class="hl-number">0</span>; i <span class="hl-operator"><</span> tamanho; i<span class="hl-operator">++</span>) {
+        notas[i] <span class="hl-operator">=</span> i <span class="hl-operator">*</span> <span class="hl-number">10</span>;
+        <span class="hl-function">printf</span>(<span class="hl-string">"Nota: %d\n"</span>, notas[i]);
+    }
+    
+    <span class="hl-comment">// 4. DEVOLVER a memória!</span>
+    <span class="hl-function">free</span>(notas);
+    
+    <span class="hl-function">system</span>(<span class="hl-string">"pause"</span>);
+    <span class="hl-keyword">return</span> <span class="hl-number">0</span>;
+}</code></pre>
+            </div>
+        </section>
+        
+        <!-- Seção 23: Arquivos -->
+        <section class="section bg-gray-800">
+            <div class="container">
+                <h2 class="text-cyan-400">Tópico Avançado 2</h2>
+                <h3 class="text-2xl md:text-3xl">Manipulação de Arquivos ('fopen')</h3>
+                <p class="text-lg md:text-xl text-gray-300 my-4">Quando seu programa fecha, todas as variáveis ('int', 'struct') morrem. Para salvar dados permanentemente, você usa arquivos.</p>
+                <p class="text-lg md:text-xl text-gray-300">' FILE*' é um ponteiro especial que age como a "chave" para um arquivo no seu HD.</p>
+                <ul class="list-disc list-outside text-base md:text-lg space-y-2 text-gray-400 pl-5 my-4">
+                    <li><span class="text-gray-100">'fopen("nome.txt", "w")'</span>: Abre o arquivo.
+                        <ul class="pl-5 text-gray-400 mt-2">
+                            <li>'"w"' (write): Apaga o conteúdo e escreve do zero.</li>
+                            <li>'"r"' (read): Lê o arquivo.</li>
+                            <li>'"a"' (append): Escreve no *fim* do arquivo.</li>
+                        </ul>
+                    </li>
+                    <li><span class="text-gray-100">'fprintf(arq, ...)'</span>: Igual ao 'printf', mas para o arquivo.</li>
+                    <li><span class="text-gray-100">'fclose(arq)'</span>: **OBRIGATÓRIO!** "Fecha a chave" e salva as mudanças.</li>
+                </ul>
+
+                <pre class="code-block"><code class="language-c"><span class="hl-preprocessor">#include &lt;stdio.h&gt;</span>
+<span class="hl-preprocessor">#include &lt;stdlib.h&gt;</span>
+
+<span class="hl-type">int</span> <span class="hl-function">main</span>(<span class="hl-type">void</span>) {
+    <span class="hl-comment">// 1. Tenta abrir/criar o arquivo</span>
+    FILE<span class="hl-operator">*</span> arquivo <span class="hl-operator">=</span> <span class="hl-function">fopen</span>(<span class="hl-string">"log.txt"</span>, <span class="hl-string">"a"</span>); <span class="hl-comment">// "a" = append</span>
+    
+    <span class="hl-keyword">if</span> (arquivo <span class="hl-operator">==</span> NULL) {
+        <span class="hl-function">printf</span>(<span class="hl-string">"Erro ao abrir arquivo!\n"</span>);
+        <span class="hl-keyword">return</span> <span class="hl-number">1</span>;
+    }
+    
+    <span class="hl-type">int</span> pontuacao <span class="hl-operator">=</span> <span class="hl-number">1500</span>;
+    
+    <span class="hl-comment">// 2. Escreve no arquivo</span>
+    <span class="hl-function">fprintf</span>(arquivo, <span class="hl-string">"Nova pontuacao: %d\n"</span>, pontuacao);
+    
+    <span class="hl-function">printf</span>(<span class="hl-string">"Log salvo em log.txt!\n"</span>);
+    
+    <span class="hl-comment">// 3. Fecha o arquivo</span>
+    <span class="hl-function">fclose</span>(arquivo);
+    
+    <span class="hl-function">system</span>(<span class="hl-string">"pause"</span>);
+    <span class="hl-keyword">return</span> <span class="hl-number">0</span>;
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- Seção 24: Listas Encadeadas -->
+        <section class="section">
+            <div class="container">
+                <h2 class="text-cyan-400">Tópico Avançado 3</h2>
+                <h3 class="text-2xl md:text-3xl">Listas Encadeadas (O Fim)</h3>
+                <p class="text-lg md:text-xl text-gray-300 my-4">Este é o chefão final da base de C. Combina TUDO: 'Structs', 'Ponteiros' e 'malloc'.</p>
+                <p class="text-lg md:text-xl text-gray-300">**O Problema:** Um Array 'int arr[10]' tem tamanho fixo. Um 'malloc' também é (você aloca 10 e pronto). E se você quiser adicionar o 11º, 12º... item de forma flexível?</p>
+                <p class="text-lg md:text-xl text-gray-300">**A Solução:** Uma "corrente" de structs. Cada "elo" ('struct Node') guarda um dado E um ponteiro para o *próximo elo*.</p>
+                
+                <h3 class="text-xl md:text-2xl text-yellow-400 mt-6">Analogia: Caça ao Tesouro</h3>
+                <p class="text-base md:text-lg text-gray-300">Cada 'struct Node' é uma pista que contém:</p>
+                <ol class="list-decimal list-outside text-base md:text-lg space-y-2 text-gray-400 pl-5 my-4">
+                    <li>Um pedaço do tesouro (o 'dado').</li>
+                    <li>O endereço da próxima pista (o ponteiro 'proximo').</li>
+                </ol>
+                <p class="text-base md:text-lg text-gray-300">A última pista aponta para 'NULL' (fim). Você usa 'malloc' para criar uma nova pista quando precisa.</p>
+
+                <pre class="code-block"><code class="language-c"><span class="hl-comment">// A "forma" da pista (elo)</span>
+<span class="hl-keyword">struct</span> Node {
+    <span class="hl-type">int</span> dado; <span class="hl-comment">// O "tesouro"</span>
+    
+    <span class="hl-comment">// O "endereço" da próxima pista</span>
+    <span class="hl-comment">// Um ponteiro para si mesmo!</span>
+    <span class="hl-keyword">struct</span> Node<span class="hl-operator">*</span> proximo; 
+};
+
+<span class="hl-type">int</span> <span class="hl-function">main</span>(<span class="hl-type">void</span>) {
+    <span class="hl-comment">// Ponteiro para o início da corrente</span>
+    <span class="hl-keyword">struct</span> Node<span class="hl-operator">*</span> cabeca <span class="hl-operator">=</span> NULL;
+    
+    <span class="hl-comment">// 1. Aloca o primeiro elo (pista)</span>
+    cabeca <span class="hl-operator">=</span> (<span class="hl-keyword">struct</span> Node<span class="hl-operator">*</span>) <span class="hl-function">malloc</span>(<span class="hl-keyword">sizeof</span>(<span class="hl-keyword">struct</span> Node));
+    cabeca<span class="hl-operator">-></span>dado <span class="hl-operator">=</span> <span class="hl-number">10</span>;
+    cabeca<span class="hl-operator">-></span>proximo <span class="hl-operator">=</span> NULL; <span class="hl-comment">// É o último (por enquanto)</span>
+    
+    <span class="hl-comment">// 2. Aloca o segundo elo</span>
+    <span class="hl-keyword">struct</span> Node<span class="hl-operator">*</span> segundo <span class="hl-operator">=</span> (<span class="hl-keyword">struct</span> Node<span class="hl-operator">*</span>) <span class="hl-function">malloc</span>(<span class="hl-keyword">sizeof</span>(<span class="hl-keyword">struct</span> Node));
+    segundo<span class="hl-operator">-></span>dado <span class="hl-operator">=</span> <span class="hl-number">20</span>;
+    segundo<span class="hl-operator">-></span>proximo <span class="hl-operator">=</span> NULL;
+    
+    <span class="hl-comment">// 3. "Engata" o primeiro no segundo</span>
+    cabeca<span class="hl-operator">-></span>proximo <span class="hl-operator">=</span> segundo;
+    
+    <span class="hl-comment">// Agora a lista é: cabeca -> segundo -> NULL</span>
+    
+    <span class="hl-keyword">return</span> <span class="hl-number">0</span>;
+}</code></pre>
+            </div>
+        </section>
+        
+        <!-- Seção 25: Conclusão -->
+        <section class="section bg-gradient-to-b from-gray-800 to-gray-900">
+            <div class="container text-center">
+                <h1 class="text-yellow-400 mb-6 md:mb-8">Maratona Completa!</h1>
+                <p class="text-2xl md:text-3xl text-gray-300 mb-6">Você cobriu absolutamente toda a base de C:</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 text-base md:text-xl text-cyan-300 font-bold max-w-4xl mx-auto my-8">
+                    <span>'if'/'for'/'while'</span>
+                    <span>Arrays/Matrizes</span>
+                    <span>Funções/Recursão</span>
+                    <span class="text-lime-400">'struct'</span>
+                    <span class="text-lime-400">'Ponteiros'</span>
+                    <span class="text-lime-400">'malloc' (Dinâmico)</span>
+                    <span class="text-lime-400">'fopen' (Arquivos)</span>
+                    <span class="text-lime-400">Listas Encadeadas</span>
+                </div>
+                <p class="text-xl md:text-2xl text-gray-300 mt-8 md:mt-12">Você está mais do que pronto. O próximo passo é praticar e construir projetos reais.</p>
+                <p class="text-base md:text-lg text-gray-400 mt-4">Eyvallah! Bom estudo!</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Barra de progresso
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // Botão voltar ao topo
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
