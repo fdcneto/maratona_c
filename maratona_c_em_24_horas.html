@@ -221,6 +221,47 @@
     <span class="hl-function">system</span>(<span class="hl-string">"pause"</span>);
     <span class="hl-keyword">return</span> <span class="hl-number">0</span>; <span class="hl-comment">// 3. "Tudo certo!"</span>
 }</code></pre>
+
+<h3 class="text-xl md:text-2xl text-yellow-400 mt-6">3. 'fgets()' (Texto Seguro)</h3>
+                <p class="text-base md:text-lg text-gray-300">
+                    Para ler textos (Strings), o <span class="font-bold text-pink-400">'scanf'</span> tem dois defeitos graves: ele para no primeiro espaço (não lê sobrenomes) e não verifica o tamanho do texto (causa <span class="font-bold text-red-500">Buffer Overflow</span>).
+                </p>
+                <p class="text-base md:text-lg text-gray-300 mt-2">
+                    A solução profissional é o <span class="font-bold text-lime-400">'fgets'</span>. Ele lê a linha inteira e respeita o limite da memória.
+                </p>
+
+                <div class="bg-gray-900 border-l-4 border-yellow-500 p-4 my-4">
+                    <p class="text-gray-200 font-bold text-lg">⚠️ O "Pulo do Gato":</p>
+                    <p class="text-gray-400 text-sm md:text-base">
+                        O 'fgets' quase sempre lê o "Enter" (\n) que você digita. Precisamos limpar isso usando a função <span class="font-mono text-lime-400">strcspn</span>.
+                    </p>
+                </div>
+
+                <pre class="code-block"><code class="language-c"><span class="hl-preprocessor">#include &lt;stdio.h&gt;</span>
+<span class="hl-preprocessor">#include &lt;stdlib.h&gt;</span>
+<span class="hl-preprocessor">#include &lt;string.h&gt;</span> <span class="hl-comment">// Necessário para strcspn</span>
+
+<span class="hl-type">int</span> <span class="hl-function">main</span>(<span class="hl-type">void</span>)
+{
+    <span class="hl-type">char</span> nome[<span class="hl-number">50</span>]; <span class="hl-comment">// Buffer para 50 caracteres</span>
+
+    <span class="hl-function">printf</span>(<span class="hl-string">"Digite seu nome completo: "</span>);
+    
+    <span class="hl-comment">// SINTAXE: fgets(onde_guardar, tamanho_maximo, de_onde_ler)</span>
+    <span class="hl-comment">// stdin = Teclado (Standard Input)</span>
+    <span class="hl-function">fgets</span>(nome, <span class="hl-number">50</span>, stdin);
+
+    <span class="hl-comment">// TRUQUE: Encontra o \n e substitui por \0 (fim de string)</span>
+    nome[<span class="hl-function">strcspn</span>(nome, <span class="hl-string">"\n"</span>)] = <span class="hl-string">'\0'</span>;
+    
+    <span class="hl-function">printf</span>(<span class="hl-string">"Ola, %s! (Texto limpo e seguro)\n"</span>, nome);
+    
+    <span class="hl-function">system</span>(<span class="hl-string">"pause"</span>);
+    <span class="hl-keyword">return</span> <span class="hl-number">0</span>;
+}</code></pre>
+                
+
+
             </div>
         </section>
         
